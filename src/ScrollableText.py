@@ -40,11 +40,11 @@ class ScrollableText:
 
         self.content = content
         self.content_pixels_size = int(self.font.getlength(self.content))
-        self.text_offset = self.content_pixels_size - (self.config.width - self.config.text_padding_left)
+        self.text_offset = self.content_pixels_size - (self.config.width - self.config.scroll_text_padding_left)
 
         if self.content_pixels_size > (self.config.width - self.config.text_padding_left):
             self.need_scrolling = True
-            self.max_step = 2 * self.config.pause_steps + self.content_pixels_size - (self.config.width - self.config.text_padding_left)
+            self.max_step = 2 * self.config.pause_steps + self.content_pixels_size - (self.config.width - self.config.scroll_text_padding_left)
         else:
             self.need_scrolling = False
 
