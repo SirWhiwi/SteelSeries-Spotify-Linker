@@ -15,5 +15,5 @@ goto loop
 
 :startBat
 tasklist /fi "ImageName eq SpotifyLinker.exe" /fo csv 2>NUL | find /I "SpotifyLinker.exe">NUL
-if "%ERRORLEVEL%"=="1" (START "" "C:\Users\temp\Desktop\Spotipy\SpotifyLinker\SpotifyLinker.exe")
+if "%ERRORLEVEL%"=="1" (START "" "%~dp0\SpotifyLinker.exe")
 goto loop

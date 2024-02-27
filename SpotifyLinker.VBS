@@ -1,3 +1,4 @@
 Set WshShell = CreateObject("WScript.Shell" ) 
-WshShell.Run chr(34) & "C:\Users\temp\Desktop\Spotipy\SpotifyLinker\test.bat" & Chr(34), 0 
+scriptDir = CreateObject("Scripting.FileSystemObject").GetParentFolderName(WScript.ScriptFullName)
+WshShell.Run chr(34) & scriptDir & "\test.bat" & Chr(34), 0 
 Set WshShell = Nothing 
