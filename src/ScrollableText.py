@@ -73,3 +73,4 @@ class ScrollableText:
 
         draw.text((self.config.width - 1 + self.text_offset - step, self.pos_y), self.content, font=self.font, anchor="rm",
                   fill=self.config.primary)
+        

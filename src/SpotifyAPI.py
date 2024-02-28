@@ -67,6 +67,7 @@ class SpotifyAPI:
                 "client_id": self.client_id,
                 "redirect_uri": self.redirect_uri
             })
+            
             server = self.start_server()
             webbrowser.open(url)
             server.handle_request()
