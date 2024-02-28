@@ -24,7 +24,7 @@ class ScrollableText:
         self.intern_step += 1
         if self.max_step != 0 and self.intern_step > self.max_step:
             self.intern_step = 0
-
+            
     def set_step(self, step):
         self.intern_step = min(max(0, step), self.max_step)
 
@@ -43,11 +43,11 @@ class ScrollableText:
 
         self.content = content
         self.content_pixels_size = int(self.font.getlength(self.content))
-        self.text_offset = self.content_pixels_size - (self.config.width - self.config.text_padding_left)
+        self.text_offset = self.content_pixels_size - (self.config.width - self.config.scroll_text_padding_left)
 
         if self.content_pixels_size > (self.config.width - self.config.text_padding_left):
             self.need_scrolling = True
-            self.max_step = 2 * self.config.pause_steps + self.content_pixels_size - (self.config.width - self.config.text_padding_left)
+            self.max_step = 2 * self.config.pause_steps + self.content_pixels_size - (self.config.width - self.config.scroll_text_padding_left)
         else:
             self.need_scrolling = False
 
@@ -73,3 +73,4 @@ class ScrollableText:
 
         draw.text((self.config.width - 1 + self.text_offset - step, self.pos_y), self.content, font=self.font, anchor="rm",
                   fill=self.config.primary)
+        

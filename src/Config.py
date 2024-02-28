@@ -4,7 +4,8 @@ class Config:
         "secondary": 0,
         "pause_steps": 10,
         "scrollbar_padding": 2,
-        "text_padding_left": 30,
+        "text_padding_left": 25,
+        "scroll_text_padding_left": 35,
         "width": 128,
         "height": 40
     }
