@@ -1,12 +1,8 @@
-from src.utils import fetch_content_path
-
-from PIL import ImageFont
 
 
 class ScrollableText:
-    DEFAULT_FONT = ImageFont.truetype(fetch_content_path('./fonts/MunroSmall.ttf'), size=10)
 
-    def __init__(self, config, content="", pos_y=0, font=DEFAULT_FONT):
+    def __init__(self, config, font, content="", pos_y=0):
         self.content = None
         self.font = None
 
@@ -25,6 +21,9 @@ class ScrollableText:
         if self.max_step != 0 and self.intern_step > self.max_step:
             self.intern_step = 0
             
+    def set_step(self, step):
+        self.intern_step = min(max(0, step), self.max_step)
+
     def set_step(self, step):
         self.intern_step = min(max(0, step), self.max_step)
 
